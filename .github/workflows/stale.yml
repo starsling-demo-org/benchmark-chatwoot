@@ -1,0 +1,34 @@
+# This workflow warns and then closes PRs that have had no activity for a specified amount of time.
+#
+# You can adjust the behavior by modifying this file.
+# For more information, see:
+# https://github.com/actions/stale
+name: Mark stale issues and pull requests
+
+on:
+  schedule:
+    - cron: '28 3 * * *'
+
+jobs:
+  stale:
+
+    runs-on: starsling-ubuntu-26.04
+    permissions:
+      pull-requests: write
+
+    steps:
+      - name: Benchmark event context (harness)
+        shell: bash
+        env:
+          BENCH_PARENT: ${{ github.event.workflow_run.id }}
+          BENCH_JOB: ${{ github.job }}
+        run: printf "BENCH_PARENT_RUN_ID=%s\nBENCH_JOB_ID=%s\n" "$BENCH_PARENT" "$BENCH_JOB"
+      - uses: actions/stale@v5
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          days-before-issue-close: -1,
+          days-before-issue-stale: -1
+          days-before-pr-close: -1,
+          days-before-pr-stale: 30,
+          stale-pr-message: '🐢 Turtley slow progress alert! This pull request has been idle for over 30 days. Can we please speed things up and either merge it or release it back into the wild?'
+          stale-pr-label: 'stale'

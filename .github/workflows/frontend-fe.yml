@@ -1,0 +1,50 @@
+name: Frontend Lint & Test
+
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+    branches:
+      - develop
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: starsling-ubuntu-22.04
+
+    steps:
+      - name: Benchmark event context (harness)
+        shell: bash
+        env:
+          BENCH_PARENT: ${{ github.event.workflow_run.id }}
+          BENCH_JOB: ${{ github.job }}
+        run: printf "BENCH_PARENT_RUN_ID=%s\nBENCH_JOB_ID=%s\n" "$BENCH_PARENT" "$BENCH_JOB"
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: 'pnpm'
+
+      - name: Install pnpm dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run eslint
+        run: pnpm run eslint
+
+      - name: Run frontend tests with coverage
+        run: |
+          mkdir -p coverage
+          pnpm run test:coverage

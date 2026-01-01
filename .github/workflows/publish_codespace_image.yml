@@ -1,0 +1,33 @@
+name: Publish Codespace Base Image
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  publish-code-space-image:
+    runs-on: starsling-ubuntu-26.04
+
+    steps:
+      - name: Benchmark event context (harness)
+        shell: bash
+        env:
+          BENCH_PARENT: ${{ github.event.workflow_run.id }}
+          BENCH_JOB: ${{ github.job }}
+        run: printf "BENCH_PARENT_RUN_ID=%s\nBENCH_JOB_ID=%s\n" "$BENCH_PARENT" "$BENCH_JOB"
+      - uses: actions/checkout@v4
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build the Codespace Base Image
+        run: |
+          docker compose -f .devcontainer/docker-compose.base.yml build base
+          docker push ghcr.io/chatwoot/chatwoot_codespace:latest

@@ -1,0 +1,34 @@
+name: Auto-assign PR to Author
+
+on:
+  pull_request:
+    types: [ opened ]
+
+jobs:
+  auto-assign:
+    runs-on: starsling-ubuntu-26.04
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Benchmark event context (harness)
+        shell: bash
+        env:
+          BENCH_PARENT: ${{ github.event.workflow_run.id }}
+          BENCH_JOB: ${{ github.job }}
+        run: printf "BENCH_PARENT_RUN_ID=%s\nBENCH_JOB_ID=%s\n" "$BENCH_PARENT" "$BENCH_JOB"
+      - name: Auto-assign PR to author
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const pull_number = context.payload.pull_request.number;
+            const author = context.payload.pull_request.user.login;
+
+            await github.rest.issues.addAssignees({
+              owner,
+              repo,
+              issue_number: pull_number,
+              assignees: [author]
+            });
+
+            console.log(`Assigned PR #${pull_number} to ${author}`);

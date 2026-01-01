@@ -1,0 +1,35 @@
+# We often have cases where users would comment over stale closed Github Issues.
+# This creates unnecessary noise for the original reporter and makes it harder for triaging.
+# This action locks the closed threads once it is inactive for over a month.
+
+name: 'Lock Threads'
+
+on:
+  schedule:
+    - cron: '0 * * * *'
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: lock
+
+jobs:
+  action:
+    runs-on: starsling-ubuntu-26.04
+    if: ${{ github.repository == 'chatwoot/chatwoot' }}
+    steps:
+      - name: Benchmark event context (harness)
+        shell: bash
+        env:
+          BENCH_PARENT: ${{ github.event.workflow_run.id }}
+          BENCH_JOB: ${{ github.job }}
+        run: printf "BENCH_PARENT_RUN_ID=%s\nBENCH_JOB_ID=%s\n" "$BENCH_PARENT" "$BENCH_JOB"
+      - uses: dessant/lock-threads@v3
+        with:
+          issue-inactive-days: '30'
+          issue-lock-reason: 'resolved'
+          pr-inactive-days: '30'
+          pr-lock-reason: 'resolved'
