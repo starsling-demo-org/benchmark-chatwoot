@@ -1,19 +1,16 @@
 name: Frontend Lint & Test
 
 on:
-  push:
-    branches:
-      - develop
   pull_request:
     branches:
-      - develop
+      - starsling/develop
 
 permissions:
   contents: read
 
 jobs:
   test:
-    runs-on: ubuntu-22.04
+    runs-on: starsling-ubuntu-22.04
 
     steps:
       - uses: actions/checkout@v4

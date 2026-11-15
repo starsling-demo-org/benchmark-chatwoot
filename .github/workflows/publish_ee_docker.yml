@@ -7,12 +7,9 @@
 name: Publish Chatwoot EE docker images
 
 on:
-  push:
+  pull_request:
     branches:
-      - develop
-      - master
-    tags:
-      - v*
+      - starsling/develop
   workflow_dispatch:
 
 env:
@@ -94,7 +91,7 @@ jobs:
           retention-days: 1
 
   merge:
-    runs-on: ubuntu-latest
+    runs-on: starsling-ubuntu-26.04
     needs:
       - build
     steps:
