@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   test:
-    runs-on: starsling-ubuntu-22.04
+    runs-on: starsling-ubuntu-24.04
 
     steps:
       - uses: actions/checkout@v4
