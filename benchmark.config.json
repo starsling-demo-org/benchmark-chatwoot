@@ -1,0 +1,573 @@
+{
+  "schemaVersion": 1,
+  "upstream": {
+    "repository": "chatwoot/chatwoot",
+    "commitSha": "b5e7a866ef420dd681307671671fd01513e4f01c",
+    "defaultBranch": "develop"
+  },
+  "benchmarkRepository": {
+    "repository": "starsling-demo-org/benchmark-chatwoot",
+    "controlBranch": "bench/control",
+    "defaultBranch": "main",
+    "replayBranch": "develop"
+  },
+  "scenarios": {
+    "main-push": {
+      "name": "main-push",
+      "description": "Merge of b5e7a866ef42 to develop",
+      "event": "push",
+      "main": {
+        "branch": "develop",
+        "beforeSha": "192a2488f7b88e35e61d73b9905444937afe1833",
+        "afterSha": "b5e7a866ef420dd681307671671fd01513e4f01c",
+        "changedPaths": [
+          "app/javascript/dashboard/components-next/changelog-card/StackedChangelogCard.vue"
+        ]
+      },
+      "referenceRuns": [
+        {
+          "workflowPath": ".github/workflows/frontend-fe.yml",
+          "runId": 42782431237,
+          "attempt": 1,
+          "htmlUrl": "https://github.com/chatwoot/chatwoot/actions/runs/42782431237"
+        },
+        {
+          "workflowPath": ".github/workflows/publish_foss_docker.yml",
+          "runId": 42782431264,
+          "attempt": 1,
+          "htmlUrl": "https://github.com/chatwoot/chatwoot/actions/runs/42782431264"
+        },
+        {
+          "workflowPath": ".github/workflows/publish_ee_docker.yml",
+          "runId": 42782431386,
+          "attempt": 1,
+          "htmlUrl": "https://github.com/chatwoot/chatwoot/actions/runs/42782431386"
+        },
+        {
+          "workflowPath": ".github/workflows/run_foss_spec.yml",
+          "runId": 42782431482,
+          "attempt": 1,
+          "htmlUrl": "https://github.com/chatwoot/chatwoot/actions/runs/42782431482"
+        }
+      ]
+    },
+    "seed-parent": {
+      "name": "seed-parent",
+      "role": "seed",
+      "description": "Warm seed: the previous push (192a2488f7b8 onto bac4dd0604f8)",
+      "event": "push",
+      "main": {
+        "branch": "develop",
+        "beforeSha": "bac4dd0604f83f149b67dd4e004933292990a324",
+        "afterSha": "192a2488f7b88e35e61d73b9905444937afe1833",
+        "changedPaths": [
+          "app/javascript/dashboard/api/inboxes.js",
+          "app/javascript/dashboard/i18n/locale/en/inboxMgmt.json",
+          "app/javascript/dashboard/routes/dashboard/settings/inbox/settingsPage/CallRoutingSettings.vue",
+          "app/javascript/dashboard/routes/dashboard/settings/inbox/settingsPage/VoiceConfigurationPage.vue",
+          "app/javascript/dashboard/routes/dashboard/settings/inbox/settingsPage/specs/CallRoutingSettings.spec.js",
+          "app/views/api/v1/models/_inbox.json.jbuilder",
+          "config/locales/en.yml",
+          "config/routes.rb",
+          "enterprise/app/controllers/api/v1/accounts/inboxes/call_routings_controller.rb",
+          "enterprise/app/jobs/voice/ring_next_agent_job.rb",
+          "enterprise/app/models/call.rb",
+          "enterprise/app/models/concerns/call_assignment_hold.rb",
+          "enterprise/app/models/concerns/call_routing_settings.rb",
+          "enterprise/app/models/enterprise/channel/twilio_sms.rb",
+          "enterprise/app/models/enterprise/conversation.rb",
+          "enterprise/app/services/enterprise/auto_assignment/assignment_service.rb",
+          "enterprise/app/services/voice/added_ring_push_service.rb",
+          "enterprise/app/services/voice/inbound_call_builder.rb",
+          "enterprise/app/services/voice/provider/twilio/conference_service.rb",
+          "enterprise/app/services/voice/ring_recipients.rb",
+          "spec/enterprise/controllers/api/v1/accounts/inboxes/call_routings_controller_spec.rb",
+          "spec/enterprise/controllers/twilio/voice_controller_spec.rb",
+          "spec/enterprise/jobs/voice/ring_next_agent_job_spec.rb",
+          "spec/enterprise/models/channel/twilio_sms_voice_spec.rb",
+          "spec/enterprise/services/voice/added_ring_push_service_spec.rb",
+          "spec/enterprise/services/voice/inbound_call_builder_spec.rb",
+          "spec/enterprise/services/voice/provider/twilio/conference_service_spec.rb",
+          "spec/enterprise/services/voice/ring_recipients_spec.rb"
+        ]
+      },
+      "referenceRuns": []
+    }
+  },
+  "patches": [
+    {
+      "id": "stack-0",
+      "source": "local",
+      "pathOrUrl": "patches/stack-0.patch",
+      "description": "levers stacked in order: 01-shared-layer-cache, 02-pr-build-read-only-cache"
+    }
+  ],
+  "runnerMapping": {
+    "defaultMap": {
+      "ubuntu-latest": {
+        "github": "ubuntu-26.04-4core",
+        "starsling": "starsling-ubuntu-26.04"
+      },
+      "ubuntu-24.04": {
+        "github": "ubuntu-24.04-4core",
+        "starsling": "starsling-ubuntu-24.04"
+      },
+      "ubuntu-26.04": {
+        "github": "TODO-github-larger-runner-for-ubuntu-26.04",
+        "starsling": "starsling-ubuntu-26.04"
+      },
+      "ubuntu-slim": {
+        "github": "TODO-github-larger-runner-for-ubuntu-slim",
+        "starsling": "starsling-ubuntu-24.04-2"
+      },
+      "ubuntu-22.04-arm": {
+        "github": "ubuntu-22.04-arm-4core",
+        "starsling": "ubuntu-22.04-arm-4core"
+      },
+      "ubuntu-22.04": {
+        "github": "ubuntu-22.04-4core",
+        "starsling": "starsling-ubuntu-24.04"
+      }
+    },
+    "runnerSpecs": {
+      "ubuntu-latest": {
+        "label": "ubuntu-latest",
+        "provider": "github",
+        "os": "linux",
+        "arch": "x64",
+        "vcpu": 4,
+        "ramGiB": 16,
+        "billingPerMinuteUsd": 0.016
+      },
+      "ubuntu-24.04": {
+        "label": "ubuntu-24.04",
+        "provider": "github",
+        "os": "linux",
+        "arch": "x64",
+        "vcpu": 4,
+        "ramGiB": 16,
+        "billingPerMinuteUsd": 0.016
+      },
+      "ubuntu-26.04": {
+        "label": "ubuntu-26.04",
+        "provider": "github",
+        "os": "linux",
+        "arch": "x64",
+        "vcpu": 4,
+        "ramGiB": 16,
+        "billingPerMinuteUsd": 0.016
+      },
+      "ubuntu-slim": {
+        "label": "ubuntu-slim",
+        "provider": "github",
+        "os": "linux",
+        "arch": "x64",
+        "vcpu": 1,
+        "ramGiB": 5,
+        "billingPerMinuteUsd": 0.004
+      },
+      "starsling-ubuntu-24.04-2": {
+        "label": "starsling-ubuntu-24.04-2",
+        "provider": "starsling",
+        "os": "linux",
+        "arch": "x64",
+        "vcpu": 2,
+        "ramGiB": 8,
+        "billingPerMinuteUsd": 0.004
+      },
+      "starsling-ubuntu-24.04": {
+        "label": "starsling-ubuntu-24.04",
+        "provider": "starsling",
+        "os": "linux",
+        "arch": "x64",
+        "vcpu": 4,
+        "ramGiB": 16,
+        "billingPerMinuteUsd": 0.008
+      },
+      "starsling-ubuntu-26.04": {
+        "label": "starsling-ubuntu-26.04",
+        "provider": "starsling",
+        "os": "linux",
+        "arch": "x64",
+        "vcpu": 4,
+        "ramGiB": 16,
+        "billingPerMinuteUsd": 0.008
+      },
+      "macos-latest": {
+        "label": "macos-latest",
+        "provider": "github",
+        "os": "macos",
+        "arch": "arm64",
+        "vcpu": 3,
+        "ramGiB": 7,
+        "billingPerMinuteUsd": 0.08
+      },
+      "windows-latest": {
+        "label": "windows-latest",
+        "provider": "github",
+        "os": "windows",
+        "arch": "x64",
+        "vcpu": 4,
+        "ramGiB": 16,
+        "billingPerMinuteUsd": 0.032
+      },
+      "TODO-github-larger-runner-for-ubuntu-latest": {
+        "label": "TODO-github-larger-runner-for-ubuntu-latest",
+        "provider": "github",
+        "os": "linux",
+        "arch": "x64",
+        "vcpu": 4,
+        "ramGiB": 16,
+        "billingPerMinuteUsd": 0.016
+      },
+      "TODO-github-larger-runner-for-ubuntu-24.04": {
+        "label": "TODO-github-larger-runner-for-ubuntu-24.04",
+        "provider": "github",
+        "os": "linux",
+        "arch": "x64",
+        "vcpu": 4,
+        "ramGiB": 16,
+        "billingPerMinuteUsd": 0.016
+      },
+      "TODO-github-larger-runner-for-ubuntu-26.04": {
+        "label": "TODO-github-larger-runner-for-ubuntu-26.04",
+        "provider": "github",
+        "os": "linux",
+        "arch": "x64",
+        "vcpu": 4,
+        "ramGiB": 16,
+        "billingPerMinuteUsd": 0.016
+      },
+      "TODO-github-larger-runner-for-ubuntu-slim": {
+        "label": "TODO-github-larger-runner-for-ubuntu-slim",
+        "provider": "github",
+        "os": "linux",
+        "arch": "x64",
+        "vcpu": 1,
+        "ramGiB": 5,
+        "billingPerMinuteUsd": 0.004
+      },
+      "ubuntu-26.04-4core": {
+        "label": "ubuntu-26.04-4core",
+        "provider": "github",
+        "os": "linux",
+        "arch": "x64",
+        "vcpu": 4,
+        "ramGiB": 16,
+        "billingPerMinuteUsd": 0.016
+      },
+      "ubuntu-22.04-arm-4core": {
+        "label": "ubuntu-22.04-arm-4core",
+        "provider": "github",
+        "os": "linux",
+        "arch": "arm64",
+        "vcpu": 4,
+        "ramGiB": 16,
+        "billingPerMinuteUsd": 0.016
+      },
+      "ubuntu-24.04-4core": {
+        "label": "ubuntu-24.04-4core",
+        "provider": "github",
+        "os": "linux",
+        "arch": "x64",
+        "vcpu": 4,
+        "ramGiB": 16,
+        "billingPerMinuteUsd": 0.016
+      },
+      "ubuntu-22.04-4core": {
+        "label": "ubuntu-22.04-4core",
+        "provider": "github",
+        "os": "linux",
+        "arch": "x64",
+        "vcpu": 4,
+        "ramGiB": 16,
+        "billingPerMinuteUsd": 0.016
+      },
+      "starsling-ubuntu-22.04": {
+        "label": "starsling-ubuntu-22.04",
+        "provider": "starsling",
+        "os": "linux",
+        "arch": "x64",
+        "vcpu": 4,
+        "ramGiB": 16,
+        "billingPerMinuteUsd": 0.008
+      }
+    }
+  },
+  "profiles": {
+    "cold": {
+      "name": "cold",
+      "actionsCache": "cold",
+      "crossRunArtifacts": "none",
+      "restoreExpectations": {},
+      "testResultReuseAllowed": false
+    },
+    "warm": {
+      "name": "warm",
+      "actionsCache": "warm",
+      "crossRunArtifacts": "seeded",
+      "seedScenario": "seed-parent",
+      "restoreExpectations": {},
+      "testResultReuseAllowed": true,
+      "amortizationHorizonRuns": 10
+    }
+  },
+  "adaptations": [
+    {
+      "id": "no-registry-login-merge-ee",
+      "kind": "workflow-setting",
+      "workflowFile": ".github/workflows/publish_ee_docker.yml",
+      "jobId": "merge",
+      "fromPattern": "",
+      "toReplacement": "",
+      "expectedMatches": 0,
+      "setPath": [
+        "steps",
+        "2",
+        "if"
+      ],
+      "setValue": false,
+      "reason": "publish_ee_docker.yml job merge: Docker Hub login has no if: and no secrets exist here; skipped (upstream has no guard on this step) (step index +1: instrumentation inserts the harness step at index 0 before adaptations apply)",
+      "blocksFullParity": true
+    },
+    {
+      "id": "no-manifest-push-merge-ee",
+      "kind": "workflow-setting",
+      "workflowFile": ".github/workflows/publish_ee_docker.yml",
+      "jobId": "merge",
+      "fromPattern": "",
+      "toReplacement": "",
+      "expectedMatches": 0,
+      "setPath": [
+        "steps",
+        "4",
+        "if"
+      ],
+      "setValue": false,
+      "reason": "publish_ee_docker.yml job merge: the manifest push talks to Docker Hub; skipped (upstream has no guard on this step) (step index +1: instrumentation inserts the harness step at index 0 before adaptations apply)",
+      "blocksFullParity": true
+    },
+    {
+      "id": "no-manifest-inspect-merge-ee",
+      "kind": "workflow-setting",
+      "workflowFile": ".github/workflows/publish_ee_docker.yml",
+      "jobId": "merge",
+      "fromPattern": "",
+      "toReplacement": "",
+      "expectedMatches": 0,
+      "setPath": [
+        "steps",
+        "5",
+        "if"
+      ],
+      "setValue": false,
+      "reason": "publish_ee_docker.yml job merge: inspects the image on Docker Hub; skipped (upstream has no guard on this step) (step index +1: instrumentation inserts the harness step at index 0 before adaptations apply)",
+      "blocksFullParity": true
+    },
+    {
+      "id": "no-registry-login-merge-foss",
+      "kind": "workflow-setting",
+      "workflowFile": ".github/workflows/publish_foss_docker.yml",
+      "jobId": "merge",
+      "fromPattern": "",
+      "toReplacement": "",
+      "expectedMatches": 0,
+      "setPath": [
+        "steps",
+        "2",
+        "if"
+      ],
+      "setValue": false,
+      "reason": "publish_foss_docker.yml job merge: Docker Hub login has no if: and no secrets exist here; skipped (upstream has no guard on this step) (step index +1: instrumentation inserts the harness step at index 0 before adaptations apply)",
+      "blocksFullParity": true
+    },
+    {
+      "id": "no-manifest-push-merge-foss",
+      "kind": "workflow-setting",
+      "workflowFile": ".github/workflows/publish_foss_docker.yml",
+      "jobId": "merge",
+      "fromPattern": "",
+      "toReplacement": "",
+      "expectedMatches": 0,
+      "setPath": [
+        "steps",
+        "4",
+        "if"
+      ],
+      "setValue": false,
+      "reason": "publish_foss_docker.yml job merge: the manifest push talks to Docker Hub; skipped (upstream has no guard on this step) (step index +1: instrumentation inserts the harness step at index 0 before adaptations apply)",
+      "blocksFullParity": true
+    },
+    {
+      "id": "no-manifest-inspect-merge-foss",
+      "kind": "workflow-setting",
+      "workflowFile": ".github/workflows/publish_foss_docker.yml",
+      "jobId": "merge",
+      "fromPattern": "",
+      "toReplacement": "",
+      "expectedMatches": 0,
+      "setPath": [
+        "steps",
+        "5",
+        "if"
+      ],
+      "setValue": false,
+      "reason": "publish_foss_docker.yml job merge: inspects the image on Docker Hub; skipped (upstream has no guard on this step) (step index +1: instrumentation inserts the harness step at index 0 before adaptations apply)",
+      "blocksFullParity": true
+    },
+    {
+      "id": "no-image-push-build-ee",
+      "kind": "deployment-guard",
+      "workflowFile": ".github/workflows/publish_ee_docker.yml",
+      "jobId": "build",
+      "fromPattern": "name-canonical=true,push=true",
+      "toReplacement": "name-canonical=true,push=false",
+      "expectedMatches": 1,
+      "reason": "publish_ee_docker.yml job build: the outputs: line ends push=true, which pushes by digest to chatwoot/chatwoot even when push: is false; set push=false Owner approved 2026-11-15.",
+      "blocksFullParity": true
+    },
+    {
+      "id": "no-image-push-build-foss",
+      "kind": "deployment-guard",
+      "workflowFile": ".github/workflows/publish_foss_docker.yml",
+      "jobId": "build",
+      "fromPattern": "name-canonical=true,push=true",
+      "toReplacement": "name-canonical=true,push=false",
+      "expectedMatches": 1,
+      "reason": "publish_foss_docker.yml job build: the outputs: line ends push=true, which pushes by digest to chatwoot/chatwoot even when push: is false; set push=false Owner approved 2026-11-15.",
+      "blocksFullParity": true
+    },
+    {
+      "id": "no-registry-login-build-ee",
+      "kind": "deployment-guard",
+      "workflowFile": ".github/workflows/publish_ee_docker.yml",
+      "jobId": "build",
+      "fromPattern": "github.event_name == 'push' || github.event_name == 'workflow_dispatch'",
+      "toReplacement": "false && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')",
+      "expectedMatches": 2,
+      "reason": "publish_ee_docker.yml job build: on a push replay upstream's condition is true, so the Docker Hub login (no secrets here) would fail and push: would publish to Docker Hub. The condition is wrapped as 'false && (...)' in the login if: and the build-push push: value (2 matches); the image build itself still runs",
+      "blocksFullParity": true
+    },
+    {
+      "id": "no-registry-login-build-foss",
+      "kind": "deployment-guard",
+      "workflowFile": ".github/workflows/publish_foss_docker.yml",
+      "jobId": "build",
+      "fromPattern": "github.event_name == 'push' || github.event_name == 'workflow_dispatch'",
+      "toReplacement": "false && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')",
+      "expectedMatches": 2,
+      "reason": "publish_foss_docker.yml job build: on a push replay upstream's condition is true, so the Docker Hub login (no secrets here) would fail and push: would publish to Docker Hub. The condition is wrapped as 'false && (...)' in the login if: and the build-push push: value (2 matches); the image build itself still runs",
+      "blocksFullParity": true
+    },
+    {
+      "id": "secret-gate-publish_ee_docker-build-dockerhub-username",
+      "kind": "secret-gate-annotation",
+      "workflowFile": ".github/workflows/publish_ee_docker.yml",
+      "jobId": "build",
+      "fromPattern": "${{ secrets.DOCKERHUB_USERNAME }}",
+      "toReplacement": "",
+      "expectedMatches": 1,
+      "reason": "DOCKERHUB_USERNAME does not exist in the benchmark org, so the expression is already empty in every configuration; the reference is removed to record that (no behaviour change). Steps that need it: see the guard rules of this job, or the job does not run on a benchmarked event.",
+      "blocksFullParity": false
+    },
+    {
+      "id": "secret-gate-publish_ee_docker-build-dockerhub-token",
+      "kind": "secret-gate-annotation",
+      "workflowFile": ".github/workflows/publish_ee_docker.yml",
+      "jobId": "build",
+      "fromPattern": "${{ secrets.DOCKERHUB_TOKEN }}",
+      "toReplacement": "",
+      "expectedMatches": 1,
+      "reason": "DOCKERHUB_TOKEN does not exist in the benchmark org, so the expression is already empty in every configuration; the reference is removed to record that (no behaviour change). Steps that need it: see the guard rules of this job, or the job does not run on a benchmarked event.",
+      "blocksFullParity": false
+    },
+    {
+      "id": "secret-gate-publish_ee_docker-merge-dockerhub-username",
+      "kind": "secret-gate-annotation",
+      "workflowFile": ".github/workflows/publish_ee_docker.yml",
+      "jobId": "merge",
+      "fromPattern": "${{ secrets.DOCKERHUB_USERNAME }}",
+      "toReplacement": "",
+      "expectedMatches": 1,
+      "reason": "DOCKERHUB_USERNAME does not exist in the benchmark org, so the expression is already empty in every configuration; the reference is removed to record that (no behaviour change). Steps that need it: see the guard rules of this job, or the job does not run on a benchmarked event.",
+      "blocksFullParity": false
+    },
+    {
+      "id": "secret-gate-publish_ee_docker-merge-dockerhub-token",
+      "kind": "secret-gate-annotation",
+      "workflowFile": ".github/workflows/publish_ee_docker.yml",
+      "jobId": "merge",
+      "fromPattern": "${{ secrets.DOCKERHUB_TOKEN }}",
+      "toReplacement": "",
+      "expectedMatches": 1,
+      "reason": "DOCKERHUB_TOKEN does not exist in the benchmark org, so the expression is already empty in every configuration; the reference is removed to record that (no behaviour change). Steps that need it: see the guard rules of this job, or the job does not run on a benchmarked event.",
+      "blocksFullParity": false
+    },
+    {
+      "id": "secret-gate-publish_foss_docker-build-dockerhub-username",
+      "kind": "secret-gate-annotation",
+      "workflowFile": ".github/workflows/publish_foss_docker.yml",
+      "jobId": "build",
+      "fromPattern": "${{ secrets.DOCKERHUB_USERNAME }}",
+      "toReplacement": "",
+      "expectedMatches": 1,
+      "reason": "DOCKERHUB_USERNAME does not exist in the benchmark org, so the expression is already empty in every configuration; the reference is removed to record that (no behaviour change). Steps that need it: see the guard rules of this job, or the job does not run on a benchmarked event.",
+      "blocksFullParity": false
+    },
+    {
+      "id": "secret-gate-publish_foss_docker-build-dockerhub-token",
+      "kind": "secret-gate-annotation",
+      "workflowFile": ".github/workflows/publish_foss_docker.yml",
+      "jobId": "build",
+      "fromPattern": "${{ secrets.DOCKERHUB_TOKEN }}",
+      "toReplacement": "",
+      "expectedMatches": 1,
+      "reason": "DOCKERHUB_TOKEN does not exist in the benchmark org, so the expression is already empty in every configuration; the reference is removed to record that (no behaviour change). Steps that need it: see the guard rules of this job, or the job does not run on a benchmarked event.",
+      "blocksFullParity": false
+    },
+    {
+      "id": "secret-gate-publish_foss_docker-merge-dockerhub-username",
+      "kind": "secret-gate-annotation",
+      "workflowFile": ".github/workflows/publish_foss_docker.yml",
+      "jobId": "merge",
+      "fromPattern": "${{ secrets.DOCKERHUB_USERNAME }}",
+      "toReplacement": "",
+      "expectedMatches": 1,
+      "reason": "DOCKERHUB_USERNAME does not exist in the benchmark org, so the expression is already empty in every configuration; the reference is removed to record that (no behaviour change). Steps that need it: see the guard rules of this job, or the job does not run on a benchmarked event.",
+      "blocksFullParity": false
+    },
+    {
+      "id": "secret-gate-publish_foss_docker-merge-dockerhub-token",
+      "kind": "secret-gate-annotation",
+      "workflowFile": ".github/workflows/publish_foss_docker.yml",
+      "jobId": "merge",
+      "fromPattern": "${{ secrets.DOCKERHUB_TOKEN }}",
+      "toReplacement": "",
+      "expectedMatches": 1,
+      "reason": "DOCKERHUB_TOKEN does not exist in the benchmark org, so the expression is already empty in every configuration; the reference is removed to record that (no behaviour change). Steps that need it: see the guard rules of this job, or the job does not run on a benchmarked event.",
+      "blocksFullParity": false
+    }
+  ],
+  "collectors": [],
+  "execution": {
+    "repetitions": 5,
+    "timeoutMinutes": 60,
+    "maxConcurrentExperiments": 1,
+    "pollIntervalSeconds": 15,
+    "apiBudgetPerHour": 252,
+    "maxJobQueueSeconds": 30,
+    "publicRepoGitHubFree": true,
+    "commitIdentity": {
+      "name": "starsling-dev",
+      "email": "290538643+starsling-dev@users.noreply.github.com"
+    },
+    "excludedJobs": [
+      {
+        "workflowFile": ".github/workflows/run_foss_spec.yml",
+        "jobId": "security-scan",
+        "reason": "bundle-audit step fails on advisories published after the pin (puma 7.2.1 GHSA-86xc-wrr9-xmmq and others, omniauth CVE-2026-63183, live ruby-advisory-db); fails identically in every setup, unrelated to the lever. Upstream passed it at its own run date. About 2-3 min, not on the critical path; still runs and counts in runner minutes"
+      }
+    ]
+  },
+  "instrumentation": true
+}

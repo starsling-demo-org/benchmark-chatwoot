@@ -1,0 +1,12 @@
+{
+  "sampleId": "full-1-main-push-warm-rep1-starsling-patched-seed",
+  "scenarioName": "seed-parent",
+  "profileName": "warm",
+  "variant": "starsling-patched",
+  "repetition": 1,
+  "event": "push",
+  "dispatchedAt": "2026-11-17T00:23:22.978Z",
+  "headSha": "3d2efb8a25dff8c04bb24d98e4147148caa5fa17",
+  "targetBranch": "develop",
+  "defaultBranch": "main"
+}

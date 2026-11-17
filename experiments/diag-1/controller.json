@@ -1,0 +1,54 @@
+{
+  "owner": "diag-1",
+  "expectedRefs": {
+    "refs/heads/develop": "e7e3c6cde4b2d51f891ed8fb80d11e98386fa7bb"
+  },
+  "workflowStates": {
+    ".github/workflows/auto-assign-pr.yml": "disabled_manually",
+    ".github/workflows/deploy_check.yml": "disabled_manually",
+    ".github/workflows/frontend-fe.yml": "active",
+    ".github/workflows/ghsa-linear-sync.yml": "disabled_manually",
+    ".github/workflows/lint_pr.yml": "disabled_manually",
+    ".github/workflows/lock.yml": "disabled_manually",
+    ".github/workflows/logging_percentage_check.yml": "disabled_manually",
+    ".github/workflows/migration_version_check.yml": "disabled_manually",
+    ".github/workflows/nightly_installer.yml": "disabled_manually",
+    ".github/workflows/publish_codespace_image.yml": "disabled_manually",
+    ".github/workflows/publish_ee_docker.yml": "active",
+    ".github/workflows/publish_foss_docker.yml": "active",
+    ".github/workflows/run_foss_spec.yml": "active",
+    ".github/workflows/run_mfa_spec.yml": "disabled_manually",
+    ".github/workflows/size-limit.yml": "disabled_manually",
+    ".github/workflows/stale.yml": "disabled_manually",
+    ".github/workflows/test_docker_build.yml": "disabled_manually"
+  },
+  "dispatches": {
+    "diag-1:diag-1-main-push-cold-rep1-github-baseline:main-push:github-baseline": {
+      "headSha": "31f0e9597bdce947c3fb7ef05fe9c3bddd3f7133",
+      "dispatchedAt": "2026-11-16T07:20:47.364Z"
+    },
+    "diag-1:diag-1-main-push-cold-rep1-starsling-baseline:main-push:starsling-baseline": {
+      "headSha": "2b8573f877eda15e58d4872896c376462483e15e",
+      "dispatchedAt": "2026-11-16T07:48:28.545Z"
+    }
+  },
+  "leaseSha": "0401957bb045d9cdec59e49a45d509f625d17d11",
+  "initialRefs": {
+    "refs/heads/bench/control": "a9f9c020933cc420b358ac61961dc9adaade4e57",
+    "refs/heads/develop": "e7e3c6cde4b2d51f891ed8fb80d11e98386fa7bb",
+    "refs/heads/main": "6a37b5cb484bc570de206594e1f22a3c16e75729",
+    "refs/heads/starsling/develop": "345166c898006a7217a311694e61add3a798c7ee"
+  },
+  "recovery": {
+    "phase": "completed",
+    "restoredRefs": {
+      "refs/heads/develop": "e7e3c6cde4b2d51f891ed8fb80d11e98386fa7bb"
+    },
+    "disabledWorkflows": [
+      ".github/workflows/frontend-fe.yml",
+      ".github/workflows/publish_ee_docker.yml",
+      ".github/workflows/publish_foss_docker.yml",
+      ".github/workflows/run_foss_spec.yml"
+    ]
+  }
+}

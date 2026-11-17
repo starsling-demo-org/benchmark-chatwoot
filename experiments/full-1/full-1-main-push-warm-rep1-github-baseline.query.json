@@ -1,0 +1,12 @@
+{
+  "sampleId": "full-1-main-push-warm-rep1-github-baseline",
+  "scenarioName": "main-push",
+  "profileName": "warm",
+  "variant": "github-baseline",
+  "repetition": 1,
+  "event": "push",
+  "dispatchedAt": "2026-11-16T23:56:32.201Z",
+  "headSha": "31f0e9597bdce947c3fb7ef05fe9c3bddd3f7133",
+  "targetBranch": "develop",
+  "defaultBranch": "main"
+}

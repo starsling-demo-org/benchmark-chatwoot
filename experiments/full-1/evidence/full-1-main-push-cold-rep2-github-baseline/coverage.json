@@ -1,0 +1,36 @@
+{
+  "scope": [
+    "coverage:vitest:frontend-fe:stmts=74.05,branch=79.37,funcs=55.24,lines=74.05",
+    "coverage:vitest:run_foss_spec:stmts=74.05,branch=79.37,funcs=55.24,lines=74.05",
+    "image:ce:linux/amd64",
+    "image:ce:linux/arm64",
+    "image:ee:linux/amd64",
+    "image:ee:linux/arm64",
+    "lint:eslint:frontend-fe",
+    "lint:eslint:run_foss_spec",
+    "lint:rubocop",
+    "merge:ce",
+    "merge:ee",
+    "rspec:backend",
+    "scan:brakeman",
+    "scan:bundle-audit",
+    "vitest:frontend-fe",
+    "vitest:run_foss_spec"
+  ],
+  "covered": [
+    "coverage:vitest:frontend-fe:stmts=74.05,branch=79.37,funcs=55.24,lines=74.05",
+    "coverage:vitest:run_foss_spec:stmts=74.05,branch=79.37,funcs=55.24,lines=74.05",
+    "image:ce:linux/amd64",
+    "image:ce:linux/arm64",
+    "image:ee:linux/amd64",
+    "image:ee:linux/arm64",
+    "lint:eslint:frontend-fe",
+    "lint:eslint:run_foss_spec",
+    "lint:rubocop",
+    "merge:ce",
+    "merge:ee",
+    "rspec:backend",
+    "vitest:frontend-fe",
+    "vitest:run_foss_spec"
+  ]
+}

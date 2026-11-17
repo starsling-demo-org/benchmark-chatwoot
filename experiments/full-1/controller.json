@@ -1,0 +1,130 @@
+{
+  "owner": "full-1",
+  "expectedRefs": {
+    "refs/heads/develop": "e7e3c6cde4b2d51f891ed8fb80d11e98386fa7bb"
+  },
+  "workflowStates": {
+    ".github/workflows/auto-assign-pr.yml": "disabled_manually",
+    ".github/workflows/deploy_check.yml": "disabled_manually",
+    ".github/workflows/frontend-fe.yml": "active",
+    ".github/workflows/ghsa-linear-sync.yml": "disabled_manually",
+    ".github/workflows/lint_pr.yml": "disabled_manually",
+    ".github/workflows/lock.yml": "disabled_manually",
+    ".github/workflows/logging_percentage_check.yml": "disabled_manually",
+    ".github/workflows/migration_version_check.yml": "disabled_manually",
+    ".github/workflows/nightly_installer.yml": "disabled_manually",
+    ".github/workflows/publish_codespace_image.yml": "disabled_manually",
+    ".github/workflows/publish_ee_docker.yml": "active",
+    ".github/workflows/publish_foss_docker.yml": "active",
+    ".github/workflows/run_foss_spec.yml": "active",
+    ".github/workflows/run_mfa_spec.yml": "disabled_manually",
+    ".github/workflows/size-limit.yml": "disabled_manually",
+    ".github/workflows/stale.yml": "disabled_manually",
+    ".github/workflows/test_docker_build.yml": "disabled_manually"
+  },
+  "dispatches": {
+    "full-1:full-1-main-push-cold-rep1-starsling-baseline:main-push:starsling-baseline": {
+      "headSha": "2b8573f877eda15e58d4872896c376462483e15e",
+      "dispatchedAt": "2026-11-16T09:32:25.143Z"
+    },
+    "full-1:full-1-main-push-cold-rep1-github-baseline:main-push:github-baseline": {
+      "headSha": "31f0e9597bdce947c3fb7ef05fe9c3bddd3f7133",
+      "dispatchedAt": "2026-11-16T09:56:47.307Z"
+    },
+    "full-1:full-1-main-push-cold-rep1-starsling-patched:main-push:starsling-patched": {
+      "headSha": "d26127292c4e53752ac9a31165a341c9896d5b78",
+      "dispatchedAt": "2026-11-16T10:28:29.419Z"
+    },
+    "full-1:full-1-main-push-cold-rep2-starsling-patched:main-push:starsling-patched": {
+      "headSha": "d26127292c4e53752ac9a31165a341c9896d5b78",
+      "dispatchedAt": "2026-11-16T11:11:26.047Z"
+    },
+    "full-1:full-1-main-push-cold-rep2-starsling-baseline:main-push:starsling-baseline": {
+      "headSha": "2b8573f877eda15e58d4872896c376462483e15e",
+      "dispatchedAt": "2026-11-16T11:53:27.075Z"
+    },
+    "full-1:full-1-main-push-cold-rep2-starsling-baseline-retry1:main-push:starsling-baseline": {
+      "headSha": "2b8573f877eda15e58d4872896c376462483e15e",
+      "dispatchedAt": "2026-11-16T16:22:37.502Z"
+    },
+    "full-1:full-1-main-push-cold-rep2-github-baseline:main-push:github-baseline": {
+      "headSha": "31f0e9597bdce947c3fb7ef05fe9c3bddd3f7133",
+      "dispatchedAt": "2026-11-16T17:00:45.398Z"
+    },
+    "full-1:full-1-main-push-cold-rep3-starsling-patched:main-push:starsling-patched": {
+      "headSha": "d26127292c4e53752ac9a31165a341c9896d5b78",
+      "dispatchedAt": "2026-11-16T17:34:46.623Z"
+    },
+    "full-1:full-1-main-push-cold-rep3-github-baseline:main-push:github-baseline": {
+      "headSha": "31f0e9597bdce947c3fb7ef05fe9c3bddd3f7133",
+      "dispatchedAt": "2026-11-16T18:16:51.159Z"
+    },
+    "full-1:full-1-main-push-cold-rep3-starsling-baseline:main-push:starsling-baseline": {
+      "headSha": "2b8573f877eda15e58d4872896c376462483e15e",
+      "dispatchedAt": "2026-11-16T18:42:44.617Z"
+    },
+    "full-1:full-1-main-push-cold-rep4-github-baseline:main-push:github-baseline": {
+      "headSha": "31f0e9597bdce947c3fb7ef05fe9c3bddd3f7133",
+      "dispatchedAt": "2026-11-16T19:09:57.801Z"
+    },
+    "full-1:full-1-main-push-cold-rep4-starsling-patched:main-push:starsling-patched": {
+      "headSha": "d26127292c4e53752ac9a31165a341c9896d5b78",
+      "dispatchedAt": "2026-11-16T19:37:57.933Z"
+    },
+    "full-1:full-1-main-push-cold-rep4-starsling-baseline:main-push:starsling-baseline": {
+      "headSha": "2b8573f877eda15e58d4872896c376462483e15e",
+      "dispatchedAt": "2026-11-16T20:19:12.519Z"
+    },
+    "full-1:full-1-main-push-cold-rep5-starsling-baseline:main-push:starsling-baseline": {
+      "headSha": "2b8573f877eda15e58d4872896c376462483e15e",
+      "dispatchedAt": "2026-11-16T20:43:22.210Z"
+    },
+    "full-1:full-1-main-push-cold-rep5-github-baseline:main-push:github-baseline": {
+      "headSha": "31f0e9597bdce947c3fb7ef05fe9c3bddd3f7133",
+      "dispatchedAt": "2026-11-16T21:08:00.083Z"
+    },
+    "full-1:full-1-main-push-cold-rep5-github-baseline-retry1:main-push:github-baseline": {
+      "headSha": "31f0e9597bdce947c3fb7ef05fe9c3bddd3f7133",
+      "dispatchedAt": "2026-11-16T22:15:49.513Z"
+    },
+    "full-1:full-1-main-push-cold-rep5-starsling-patched:main-push:starsling-patched": {
+      "headSha": "d26127292c4e53752ac9a31165a341c9896d5b78",
+      "dispatchedAt": "2026-11-16T22:42:47.181Z"
+    },
+    "full-1:full-1-main-push-warm-rep1-github-baseline-seed:seed-parent:github-baseline": {
+      "headSha": "10f448a3aa4fe00d69cf42af009d3789a00b741c",
+      "dispatchedAt": "2026-11-16T23:26:38.089Z"
+    },
+    "full-1:full-1-main-push-warm-rep1-github-baseline:main-push:github-baseline": {
+      "headSha": "31f0e9597bdce947c3fb7ef05fe9c3bddd3f7133",
+      "dispatchedAt": "2026-11-16T23:56:32.201Z"
+    },
+    "full-1:full-1-main-push-warm-rep1-starsling-patched-seed:seed-parent:starsling-patched": {
+      "headSha": "3d2efb8a25dff8c04bb24d98e4147148caa5fa17",
+      "dispatchedAt": "2026-11-17T00:23:22.978Z"
+    },
+    "full-1:full-1-main-push-warm-rep1-starsling-patched:main-push:starsling-patched": {
+      "headSha": "d26127292c4e53752ac9a31165a341c9896d5b78",
+      "dispatchedAt": "2026-11-17T00:50:35.984Z"
+    }
+  },
+  "leaseSha": "7729f46328138c58825e10e8043bd1fed860c680",
+  "initialRefs": {
+    "refs/heads/bench/control": "326efd179a1f4404c8c58de5b024c861eab66393",
+    "refs/heads/develop": "e7e3c6cde4b2d51f891ed8fb80d11e98386fa7bb",
+    "refs/heads/main": "6a37b5cb484bc570de206594e1f22a3c16e75729",
+    "refs/heads/starsling/develop": "345166c898006a7217a311694e61add3a798c7ee"
+  },
+  "recovery": {
+    "phase": "completed",
+    "restoredRefs": {
+      "refs/heads/develop": "e7e3c6cde4b2d51f891ed8fb80d11e98386fa7bb"
+    },
+    "disabledWorkflows": [
+      ".github/workflows/frontend-fe.yml",
+      ".github/workflows/publish_ee_docker.yml",
+      ".github/workflows/publish_foss_docker.yml",
+      ".github/workflows/run_foss_spec.yml"
+    ]
+  }
+}

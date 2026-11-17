@@ -1,0 +1,70 @@
+{
+  "experimentId": "full-1",
+  "sampleId": "full-1-main-push-cold-rep3-github-baseline",
+  "scenarioName": "main-push",
+  "variant": "github-baseline",
+  "profileName": "cold",
+  "currentStep": "completed",
+  "completedSteps": [
+    "1_acquire_lease",
+    "2_register_placeholders",
+    "3_disable_workflows_and_reset_refs",
+    "4_install_and_verify_trees",
+    "5_enable_scenario_workflows",
+    "6_trigger_event",
+    "7_await_downstream_completion"
+  ],
+  "controlBranch": "bench/control",
+  "defaultBranch": "main",
+  "benchmarkOwnedRefs": [
+    "refs/heads/develop",
+    "refs/heads/main",
+    "refs/heads/bench/pr/main-push/head"
+  ],
+  "previousBenchmarkRefs": {
+    "refs/heads/develop": "d26127292c4e53752ac9a31165a341c9896d5b78",
+    "refs/heads/main": "6a37b5cb484bc570de206594e1f22a3c16e75729",
+    "refs/heads/bench/pr/main-push/head": null
+  },
+  "observedUnrelatedRefs": {
+    "refs/heads/bench/control": "326efd179a1f4404c8c58de5b024c861eab66393",
+    "refs/heads/starsling/develop": "345166c898006a7217a311694e61add3a798c7ee"
+  },
+  "registeredPlaceholderWorkflows": [],
+  "disabledWorkflows": [
+    ".github/workflows/auto-assign-pr.yml",
+    ".github/workflows/deploy_check.yml",
+    ".github/workflows/frontend-fe.yml",
+    ".github/workflows/ghsa-linear-sync.yml",
+    ".github/workflows/lint_pr.yml",
+    ".github/workflows/lock.yml",
+    ".github/workflows/logging_percentage_check.yml",
+    ".github/workflows/migration_version_check.yml",
+    ".github/workflows/nightly_installer.yml",
+    ".github/workflows/publish_codespace_image.yml",
+    ".github/workflows/publish_ee_docker.yml",
+    ".github/workflows/publish_foss_docker.yml",
+    ".github/workflows/run_foss_spec.yml",
+    ".github/workflows/run_mfa_spec.yml",
+    ".github/workflows/size-limit.yml",
+    ".github/workflows/stale.yml",
+    ".github/workflows/test_docker_build.yml"
+  ],
+  "enabledWorkflows": [
+    ".github/workflows/frontend-fe.yml",
+    ".github/workflows/publish_ee_docker.yml",
+    ".github/workflows/publish_foss_docker.yml",
+    ".github/workflows/run_foss_spec.yml"
+  ],
+  "updatedAt": "2026-11-16T18:35:12.083Z",
+  "leaseAcquiredAt": "2026-11-16T17:56:22.962Z",
+  "leaseHolder": "full-1:full-1-main-push-cold-rep3-github-baseline",
+  "installedTreeHash": "8ad95dc07e8ebf430ca2cd00723aa6d32601941fc03bd84cdd0c3f5ca2373024",
+  "dispatchRecord": {
+    "idempotencyKey": "full-1:full-1-main-push-cold-rep3-github-baseline:main-push:github-baseline",
+    "dispatchedAt": "2026-11-16T18:16:51.159Z",
+    "event": "push",
+    "targetRef": "refs/heads/develop",
+    "headSha": "31f0e9597bdce947c3fb7ef05fe9c3bddd3f7133"
+  }
+}

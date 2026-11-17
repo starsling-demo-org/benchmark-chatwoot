@@ -1,0 +1,149 @@
+{
+  "tests": [
+    {
+      "testId": "count:brakeman:warnings=40",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "count:image-steps:ce:linux/amd64=28",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "count:image-steps:ce:linux/arm64=28",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "count:image-steps:ee:linux/amd64=28",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "count:image-steps:ee:linux/arm64=28",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "count:rspec:backend:examples=7776",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "count:rspec:backend:pending=146",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "count:rspec:backend:shards=16",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "count:rubocop:files=3496",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "count:vitest:frontend-fe:files=543,tests=5505,skipped=0",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "count:vitest:run_foss_spec:files=543,tests=5505,skipped=0",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "coverage:vitest:frontend-fe:stmts=74.05,branch=79.37,funcs=55.24,lines=74.05",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "coverage:vitest:run_foss_spec:stmts=74.05,branch=79.37,funcs=55.24,lines=74.05",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "image:ce:linux/amd64",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "image:ce:linux/arm64",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "image:ee:linux/amd64",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "image:ee:linux/arm64",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "lint:eslint:frontend-fe",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "lint:eslint:run_foss_spec",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "lint:rubocop",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "merge-manifest-push:ce",
+      "verdict": "skipped",
+      "mode": "skipped"
+    },
+    {
+      "testId": "merge-manifest-push:ee",
+      "verdict": "skipped",
+      "mode": "skipped"
+    },
+    {
+      "testId": "merge:ce",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "merge:ee",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "rspec:backend",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "scan:brakeman",
+      "verdict": "failed",
+      "mode": "executed"
+    },
+    {
+      "testId": "scan:bundle-audit",
+      "verdict": "failed",
+      "mode": "executed"
+    },
+    {
+      "testId": "vitest:frontend-fe",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "vitest:run_foss_spec",
+      "verdict": "passed",
+      "mode": "executed"
+    }
+  ]
+}
